@@ -1,0 +1,24 @@
+.scenario {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.scenario:hover {
+    background-color: #e9ecef;
+}
+#questionContainer {
+    display: none;
+    position: absolute; /* Position absolute for centering */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    text-align: center;
+    z-index: 10; /* Ensure it's on top */
+}
+body {
+    position: relative; /* Required for absolute positioning of questionContainer */
+    height: 100vh; /* Full viewport height */
+}
