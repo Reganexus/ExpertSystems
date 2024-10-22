@@ -8,34 +8,34 @@ function startSection25Questions() {
 function askNextQuestion25() {
     switch (currentStep25) {
         case 1:
-            showQuestion("Is the individual a member of Board of Election Inspectors (Chairman, Poll Clerk, Third Member)?");
+            showQuestion25("Is the individual a member of Board of Election Inspectors (Chairman, Poll Clerk, Third Member)?");
             break;
         case 2:
-            showQuestion("Is the member of BEI away from their positions and blocking watchers or public from viewing the ballots, election return, or tally board?");
+            showQuestion25("Is the member of BEI away from their positions and blocking watchers or public from viewing the ballots, election return, or tally board?");
             break;
         case 3:
-            showQuestion("Is the table used for counting votes cluttered with unrelated materials?");
+            showQuestion25("Is the table used for counting votes cluttered with unrelated materials?");
             break;
         case 4:
-            showQuestion("Are the BEI members following the procedural requirements, like reading ballots aloud or recording votes in real-time?");
+            showQuestion25("Are the BEI members following the procedural requirements, like reading ballots aloud or recording votes in real-time?");
             break;
         case 5:
-            showQuestion("Is any individual, other than official BEI members, allowed to get too close to the ballots or election documents?");
+            showQuestion25("Is any individual, other than official BEI members, allowed to get too close to the ballots or election documents?");
             break;
         case 6:
-            showQuestion("Is the individual an Election Personnel (Watcher/Poll Worker)?");
+            showQuestion25("Is the individual an Election Personnel (Watcher/Poll Worker)?");
             break;
         case 7:
-            showQuestion("Is the watcher or poll worker attempting to touch tally board, ballots, or election return?");
+            showQuestion25("Is the watcher or poll worker attempting to touch tally board, ballots, or election return?");
             break;
         case 8:
-            showQuestion("Is the individual a registered voter?");
+            showQuestion25("Is the individual a registered voter?");
             break;
         case 9:
-            showQuestion("Is the registered voter trying to get closer and touch the tally board, ballots, or election return?");
+            showQuestion25("Is the registered voter trying to get closer and touch the tally board, ballots, or election return?");
             break;
         case 10:
-            showQuestion("Is the unauthorized individual in the polling place trying to help during the election process?");
+            showQuestion25("Is the unauthorized individual in the polling place trying to help during the election process?");
             break;
         default:
             goBack(); // Handle end of questions or reset
@@ -131,6 +131,19 @@ function handleAnswer25(answer) {
     }
 }
 
+function showQuestion25(scenario) {
+    // Hide all scenario sections
+    document.querySelectorAll('.scenario-section').forEach(section => {
+        section.style.display = 'none';
+    });
+
+    // Show question container
+    const questionContainer = document.getElementById('questionContainer');
+    const questionText = document.getElementById('questionText');
+    questionText.innerHTML = scenario + "?"; // Set the question text
+    questionContainer.style.display = 'block'; // Show the question container
+}
+
 function displayPenalty(penaltyText) {
     const questionText = document.getElementById('questionText');
     questionText.innerHTML = `Penalty: ${penaltyText}`; // Display the penalty in the questionContainer
@@ -155,4 +168,3 @@ function resetQuiz() {
     document.getElementById('noButton').classList.remove('d-none');
     askNextQuestion25();
 }
-

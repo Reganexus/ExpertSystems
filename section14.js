@@ -8,25 +8,25 @@ function startSection14Questions() {
 function askNextQuestion14() {
     switch (currentStep14) {
         case 1:
-            showQuestion("Is the individual a candidate for election?");
+            showQuestion14("Is the individual a candidate for election?");
             break;
         case 2:
-            showQuestion("Is the individual running for a position in the barangay?");
+            showQuestion14("Is the individual running for a position in the barangay?");
             break;
         case 3:
-            showQuestion("Has the candidate spent any money or resources for the election campaign?");
+            showQuestion14("Has the candidate spent any money or resources for the election campaign?");
             break;
         case 4:
-            showQuestion("Has the elected official entered public office without submitting SOCE after 30 days of the election?");
+            showQuestion14("Has the elected official entered public office without submitting SOCE after 30 days of the election?");
             break;
         case 5:
-            showQuestion("Has the candidate submitted a nil SOCE after 30 days of the election?");
+            showQuestion14("Has the candidate submitted a nil SOCE after 30 days of the election?");
             break;
         case 6:
-            showQuestion("Has the elected official submitted SOCE after 30 days of the election?");
+            showQuestion14("Has the elected official submitted SOCE after 30 days of the election?");
             break;
         case 7:
-            showQuestion("Has the candidate previously violated the regulations regarding SOCE submission?");
+            showQuestion14("Has the candidate previously violated the regulations regarding SOCE submission?");
             break;
         default:
             goBack(); // Return to the main menu or handle end of questions
@@ -98,11 +98,25 @@ function handleAnswer(answer) {
     }
 }
 
+function showQuestion14(scenario) {
+    // Hide all scenario sections
+    document.querySelectorAll('.scenario-section').forEach(section => {
+        section.style.display = 'none';
+    });
+
+    // Show question container
+    const questionContainer = document.getElementById('questionContainer');
+    const questionText = document.getElementById('questionText');
+    questionText.innerHTML = scenario + "?"; // Set the question text
+    questionContainer.style.display = 'block'; // Show the question container
+}
+
 function displayPenalty(penaltyText) {
     const questionText = document.getElementById('questionText');
     questionText.innerHTML = `Penalty: ${penaltyText}`; // Display the penalty in the questionContainer
     showResultButtons(); // Show the new buttons
 }
+
 
 function displayNoPenalty() {
     const questionText = document.getElementById('questionText');
@@ -122,5 +136,3 @@ function resetQuiz() {
     document.getElementById('noButton').classList.remove('d-none');
     askNextQuestion14();
 }
-
-
