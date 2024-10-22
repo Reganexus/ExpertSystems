@@ -30,3 +30,4 @@ function goBack() {
         section.style.display = 'block'; // Show scenarios again
     });
 }
+
