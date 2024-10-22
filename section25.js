@@ -15,7 +15,7 @@ function startSection25Questions() {
             }
         } else if (step === 2) {
             if (answer === 'yes') {
-                document.getElementById('questionText').innerHTML = "Penalty: Guilty of violating the rules of vote counting. Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
+                document.getElementById('questionText').innerHTML = `"Penalty: Guilty of violating the rules of vote counting. Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights."`;
                 showResultButtons();
             } else {
                 document.getElementById('questionText').innerHTML = "Q4: Is the table cluttered with unrelated materials like pens, papers, or personal items?";
