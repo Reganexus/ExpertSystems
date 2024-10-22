@@ -1,12 +1,12 @@
-let currentStep = 1; // To keep track of the question step
+let currentStep14 = 1; // To keep track of the question step
 
 function startSection14Questions() {
-    currentStep = 1;
-    askNextQuestion(); // Start the process by asking the first question
+    currentStep14 = 1;
+    askNextQuestion14(); // Start the process by asking the first question
 }
 
-function askNextQuestion() {
-    switch (currentStep) {
+function askNextQuestion14() {
+    switch (currentStep14) {
         case 1:
             showQuestion("Is the individual a candidate for election?");
             break;
@@ -36,40 +36,46 @@ function askNextQuestion() {
 
 function handleAnswer(answer) {
     // Process the answer for each step
-    switch (currentStep) {
+    switch (currentStep14) {
         case 1:
             if (answer === 'yes') {
-                currentStep = 2;
+                currentStep14 = 2;
+                askNextQuestion14();
             } else {
                 displayNoPenalty();
             }
             break;
         case 2:
             if (answer === 'yes') {
-                currentStep = 3;
+                currentStep14 = 3;
+                askNextQuestion14();
             } else {
                 displayNoPenalty();
             }
             break;
         case 3:
             if (answer === 'yes') {
-                currentStep = 4;
+                currentStep14 = 4;
+                askNextQuestion14();
             } else {
-                currentStep = 5;
+                currentStep14 = 5;
+                askNextQuestion14();
             }
             break;
         case 4:
             if (answer === 'yes') {
                 displayPenalty("An administrative offense. Fine: ₱1,000 to ₱30,000.");
             } else {
-                currentStep = 6;
+                currentStep14 = 6;
+                askNextQuestion14();
             }
             break;
         case 5:
             if (answer === 'yes') {
                 displayNoPenalty();
             } else {
-                currentStep = 7;
+                currentStep14 = 7;
+                askNextQuestion14();
             }
             break;
         case 6:
@@ -90,17 +96,31 @@ function handleAnswer(answer) {
             goBack();
             return;
     }
-
-    // Move to the next question if applicable
-    askNextQuestion();
 }
 
 function displayPenalty(penaltyText) {
-    alert(penaltyText);
-    goBack(); // Optionally return to the scenarios
+    const questionText = document.getElementById('questionText');
+    questionText.innerHTML = `Penalty: ${penaltyText}`; // Display the penalty in the questionContainer
+    showResultButtons(); // Show the new buttons
 }
 
 function displayNoPenalty() {
-    alert("No penalty.");
-    goBack(); // Optionally return to the scenarios
+    const questionText = document.getElementById('questionText');
+    questionText.innerHTML = "No Violation."; // Display "No penalty" in the questionContainer
+    showResultButtons(); // Show the new buttons
 }
+
+function resetQuiz() {
+    currentStep = 1; // Reset to the first question
+    
+    // Hide the "Back to Home" and "Reset" buttons
+    document.getElementById('backHomeButton').classList.add('d-none');
+    document.getElementById('resetButton').classList.add('d-none');
+
+    // Show the Yes/No buttons again
+    document.getElementById('yesButton').classList.remove('d-none');
+    document.getElementById('noButton').classList.remove('d-none');
+    askNextQuestion14();
+}
+
+
