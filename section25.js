@@ -1,170 +1,90 @@
-let currentStep25 = 1; // To keep track of the question step for Section 25
-
 function startSection25Questions() {
-    currentStep25 = 1;
-    askNextQuestion25(); // Start the process by asking the first question
-}
+    document.getElementById('questionText').innerHTML = "Q1: Is the individual a member of Board of Election Inspectors (Chairman, Poll Clerk, Third Member)?";
+    document.getElementById('questionContainer').style.display = 'block';
+    document.querySelectorAll('.scenario-section').forEach(section => section.style.display = 'none');
+    let step = 1;
 
-function askNextQuestion25() {
-    switch (currentStep25) {
-        case 1:
-            showQuestion25("Is the individual a member of Board of Election Inspectors (Chairman, Poll Clerk, Third Member)?");
-            break;
-        case 2:
-            showQuestion25("Is the member of BEI away from their positions and blocking watchers or public from viewing the ballots, election return, or tally board?");
-            break;
-        case 3:
-            showQuestion25("Is the table used for counting votes cluttered with unrelated materials?");
-            break;
-        case 4:
-            showQuestion25("Are the BEI members following the procedural requirements, like reading ballots aloud or recording votes in real-time?");
-            break;
-        case 5:
-            showQuestion25("Is any individual, other than official BEI members, allowed to get too close to the ballots or election documents?");
-            break;
-        case 6:
-            showQuestion25("Is the individual an Election Personnel (Watcher/Poll Worker)?");
-            break;
-        case 7:
-            showQuestion25("Is the watcher or poll worker attempting to touch tally board, ballots, or election return?");
-            break;
-        case 8:
-            showQuestion25("Is the individual a registered voter?");
-            break;
-        case 9:
-            showQuestion25("Is the registered voter trying to get closer and touch the tally board, ballots, or election return?");
-            break;
-        case 10:
-            showQuestion25("Is the unauthorized individual in the polling place trying to help during the election process?");
-            break;
-        default:
-            goBack(); // Handle end of questions or reset
-            break;
-    }
-}
-
-function handleAnswer25(answer) {
-    // Process the answer for each step in Section 25
-    switch (currentStep25) {
-        case 1:
+    window.handleAnswer = function(answer) {
+        if (step === 1) {
             if (answer === 'yes') {
-                currentStep25 = 2;
-                askNextQuestion25();
+                document.getElementById('questionText').innerHTML = "Q2: Is the member of BEI blocking the watchers or public from having a clear view of the ballots, election return, or tally board?";
+                step = 2;
             } else {
-                currentStep25 = 3;
-                askNextQuestion25();
+                document.getElementById('questionText').innerHTML = "Q3: Is the individual an Election Personnel (Watchers/Poll Workers)?";
+                step = 3;
             }
-            break;
-        case 2:
+        } else if (step === 2) {
             if (answer === 'yes') {
-                displayPenalty("Imprisonment: one to six years. Disqualification from holding public office. Loss of voting rights.");
+                document.getElementById('questionText').innerHTML = "Penalty: Guilty of violating the rules of vote counting. Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
+                showResultButtons();
             } else {
-                currentStep25 = 4;
-                askNextQuestion25();
+                document.getElementById('questionText').innerHTML = "Q4: Is the table cluttered with unrelated materials like pens, papers, or personal items?";
+                step = 4;
             }
-            break;
-        case 3:
+        } else if (step === 3) {
             if (answer === 'yes') {
-                displayPenalty("Imprisonment: one to six years. Disqualification from holding public office. Loss of voting rights.");
+                document.getElementById('questionText').innerHTML = "Q5: Is the watcher or poll worker trying to touch the tally board, ballots, or election return?";
+                step = 5;
             } else {
-                currentStep25 = 4;
-                askNextQuestion25();
+                document.getElementById('questionText').innerHTML = "Q6: Are you a registered voter?";
+                step = 6;
             }
-            break;
-        case 4:
+        } else if (step === 4) {
             if (answer === 'yes') {
-                currentStep25 = 5;
-                askNextQuestion25();
+                document.getElementById('questionText').innerHTML = "Penalty: Guilty of violating the rules of vote counting. Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
+                showResultButtons();
             } else {
-                displayPenalty("Imprisonment: one to six years. Disqualification from holding public office. Loss of voting rights.");
+                document.getElementById('questionText').innerHTML = "Q7: Are the BEI members following procedural requirements like reading ballots aloud and recording votes in real-time?";
+                step = 7;
             }
-            break;
-        case 5:
+        } else if (step === 5) {
             if (answer === 'yes') {
-                displayPenalty("Imprisonment: one to six years. Disqualification from holding public office. Loss of voting rights.");
+                document.getElementById('questionText').innerHTML = "Penalty: Guilty of violating the rules of vote counting. Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
+                showResultButtons();
             } else {
-                displayNoPenalty();
+                document.getElementById('questionText').innerHTML = "No violation.";
+                showResultButtons();
             }
-            break;
-        case 6:
+        } else if (step === 6) {
             if (answer === 'yes') {
-                currentStep25 = 7;
-                askNextQuestion25();
+                document.getElementById('questionText').innerHTML = "Q8: Is the registered voter trying to touch the tally board, ballots, or election return?";
+                step = 8;
             } else {
-                currentStep25 = 8;
-                askNextQuestion25();
+                document.getElementById('questionText').innerHTML = "Q9: Is the individual an unauthorized person trying to assist in the election process?";
+                step = 9;
             }
-            break;
-        case 7:
+        } else if (step === 7) {
+            if (answer === 'no') {
+                document.getElementById('questionText').innerHTML = "Penalty: Guilty of violating the rules of vote counting. Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
+                showResultButtons();
+            } else {
+                document.getElementById('questionText').innerHTML = "Q10: Are unauthorized individuals getting too close to ballots or documents?";
+                step = 10;
+            }
+        } else if (step === 8) {
             if (answer === 'yes') {
-                displayPenalty("Imprisonment: one to six years. Disqualification from holding public office. Loss of voting rights.");
+                document.getElementById('questionText').innerHTML = "Penalty: Guilty of violating the rules of vote counting. Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
+                showResultButtons();
             } else {
-                displayNoPenalty();
+                document.getElementById('questionText').innerHTML = "No violation.";
+                showResultButtons();
             }
-            break;
-        case 8:
+        } else if (step === 9) {
             if (answer === 'yes') {
-                currentStep25 = 9;
-                askNextQuestion25();
+                document.getElementById('questionText').innerHTML = "Penalty: Guilty of violating the rules of vote counting. Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
+                showResultButtons();
             } else {
-                currentStep25 = 10;
-                askNextQuestion25();
+                document.getElementById('questionText').innerHTML = "No violation.";
+                showResultButtons();
             }
-            break;
-        case 9:
+        } else if (step === 10) {
             if (answer === 'yes') {
-                displayPenalty("Imprisonment: one to six years. Disqualification from holding public office. Loss of voting rights.");
+                document.getElementById('questionText').innerHTML = "Penalty: Guilty of violating the rules of vote counting. Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
+                showResultButtons();
             } else {
-                displayNoPenalty();
+                document.getElementById('questionText').innerHTML = "No violation.";
+                showResultButtons();
             }
-            break;
-        case 10:
-            if (answer === 'yes') {
-                displayPenalty("Imprisonment: one to six years. Disqualification from holding public office. Loss of voting rights.");
-            } else {
-                displayNoPenalty();
-            }
-            break;
-        default:
-            goBack(); // Return to the main menu or handle end of questions
-            return;
-    }
-}
-
-function showQuestion25(scenario) {
-    // Hide all scenario sections
-    document.querySelectorAll('.scenario-section').forEach(section => {
-        section.style.display = 'none';
-    });
-
-    // Show question container
-    const questionContainer = document.getElementById('questionContainer');
-    const questionText = document.getElementById('questionText');
-    questionText.innerHTML = scenario + "?"; // Set the question text
-    questionContainer.style.display = 'block'; // Show the question container
-}
-
-function displayPenalty(penaltyText) {
-    const questionText = document.getElementById('questionText');
-    questionText.innerHTML = `Penalty: ${penaltyText}`; // Display the penalty in the questionContainer
-    showResultButtons();
-}
-
-function displayNoPenalty() {
-    const questionText = document.getElementById('questionText');
-    questionText.innerHTML = "No Violation."; // Display "No penalty" in the questionContainer
-    showResultButtons();
-}
-
-function resetQuiz() {
-    currentStep = 1; // Reset to the first question
-    
-    // Hide the "Back to Home" and "Reset" buttons
-    document.getElementById('backHomeButton').classList.add('d-none');
-    document.getElementById('resetButton').classList.add('d-none');
-
-    // Show the Yes/No buttons again
-    document.getElementById('yesButton').classList.remove('d-none');
-    document.getElementById('noButton').classList.remove('d-none');
-    askNextQuestion25();
+        }
+    };
 }

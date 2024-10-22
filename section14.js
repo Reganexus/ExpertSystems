@@ -1,137 +1,66 @@
-let currentStep14 = 1; // To keep track of the question step
-
 function startSection14Questions() {
-    currentStep14 = 1;
-    askNextQuestion14(); // Start the process by asking the first question
-}
+    document.getElementById('questionText').innerHTML = "Q1: Is the individual a candidate for election?";
+    document.getElementById('questionContainer').style.display = 'block';
+    document.querySelectorAll('.scenario-section').forEach(section => section.style.display = 'none');
+    let step = 1;
 
-function askNextQuestion14() {
-    switch (currentStep14) {
-        case 1:
-            showQuestion14("Is the individual a candidate for election?");
-            break;
-        case 2:
-            showQuestion14("Is the individual running for a position in the barangay?");
-            break;
-        case 3:
-            showQuestion14("Has the candidate spent any money or resources for the election campaign?");
-            break;
-        case 4:
-            showQuestion14("Has the elected official entered public office without submitting SOCE after 30 days of the election?");
-            break;
-        case 5:
-            showQuestion14("Has the candidate submitted a nil SOCE after 30 days of the election?");
-            break;
-        case 6:
-            showQuestion14("Has the elected official submitted SOCE after 30 days of the election?");
-            break;
-        case 7:
-            showQuestion14("Has the candidate previously violated the regulations regarding SOCE submission?");
-            break;
-        default:
-            goBack(); // Return to the main menu or handle end of questions
-            break;
-    }
-}
-
-function handleAnswer(answer) {
-    // Process the answer for each step
-    switch (currentStep14) {
-        case 1:
+    window.handleAnswer = function(answer) {
+        if (step === 1) {
             if (answer === 'yes') {
-                currentStep14 = 2;
-                askNextQuestion14();
+                document.getElementById('questionText').innerHTML = "Q2: Is the individual running for a position in the barangay?";
+                step = 2;
             } else {
-                displayNoPenalty();
+                document.getElementById('questionText').innerHTML = "No penalty.";
+                showResultButtons();
             }
-            break;
-        case 2:
+        } else if (step === 2) {
             if (answer === 'yes') {
-                currentStep14 = 3;
-                askNextQuestion14();
+                document.getElementById('questionText').innerHTML = "Q3: Has the candidate spent any money or resources for the election campaign?";
+                step = 3;
             } else {
-                displayNoPenalty();
+                document.getElementById('questionText').innerHTML = "No penalty.";
+                showResultButtons();
             }
-            break;
-        case 3:
+        } else if (step === 3) {
             if (answer === 'yes') {
-                currentStep14 = 4;
-                askNextQuestion14();
+                document.getElementById('questionText').innerHTML = "Q4: Has the elected official entered their public office after being elected without submitting SOCE after 30 days of the election?";
+                step = 4;
             } else {
-                currentStep14 = 5;
-                askNextQuestion14();
+                document.getElementById('questionText').innerHTML = "Q5: Has the candidate submitted a nil SOCE after 30 days of election?";
+                step = 5;
             }
-            break;
-        case 4:
+        } else if (step === 4) {
             if (answer === 'yes') {
-                displayPenalty("An administrative offense. Fine: ₱1,000 to ₱30,000.");
+                document.getElementById('questionText').innerHTML = "Penalty: An administrative offense, fine between P1,000 and P30,000.";
+                showResultButtons();
             } else {
-                currentStep14 = 6;
-                askNextQuestion14();
+                document.getElementById('questionText').innerHTML = "Q6: Has the elected official submitted SOCE after 30 days of the election?";
+                step = 6;
             }
-            break;
-        case 5:
+        } else if (step === 5) {
             if (answer === 'yes') {
-                displayNoPenalty();
+                document.getElementById('questionText').innerHTML = "No penalty.";
+                showResultButtons();
             } else {
-                currentStep14 = 7;
-                askNextQuestion14();
+                document.getElementById('questionText').innerHTML = "Q7: Has the candidate previously violated the regulations regarding the submission of the SOCE?";
+                step = 7;
             }
-            break;
-        case 6:
+        } else if (step === 6) {
             if (answer === 'yes') {
-                displayNoPenalty();
+                document.getElementById('questionText').innerHTML = "No penalty.";
+                showResultButtons();
             } else {
-                displayPenalty("An administrative offense. Fine: ₱1,000 to ₱30,000.");
+                document.getElementById('questionText').innerHTML = "Penalty: An administrative offense, fine between P1,000 and P30,000.";
+                showResultButtons();
             }
-            break;
-        case 7:
+        } else if (step === 7) {
             if (answer === 'yes') {
-                displayPenalty("The fine shall be from ₱2,000 to ₱60,000.");
+                document.getElementById('questionText').innerHTML = "Penalty: Fine between P2,000 and P60,000.";
+                showResultButtons();
             } else {
-                displayPenalty("An administrative offense. Fine: ₱1,000 to ₱30,000.");
+                document.getElementById('questionText').innerHTML = "Penalty: An administrative offense, fine between P1,000 and P30,000.";
+                showResultButtons();
             }
-            break;
-        default:
-            goBack();
-            return;
-    }
-}
-
-function showQuestion14(scenario) {
-    // Hide all scenario sections
-    document.querySelectorAll('.scenario-section').forEach(section => {
-        section.style.display = 'none';
-    });
-
-    // Show question container
-    const questionContainer = document.getElementById('questionContainer');
-    const questionText = document.getElementById('questionText');
-    questionText.innerHTML = scenario + "?"; // Set the question text
-    questionContainer.style.display = 'block'; // Show the question container
-}
-
-function displayPenalty(penaltyText) {
-    const questionText = document.getElementById('questionText');
-    questionText.innerHTML = `Penalty: ${penaltyText}`; // Display the penalty in the questionContainer
-    showResultButtons(); // Show the new buttons
-}
-
-function displayNoPenalty() {
-    const questionText = document.getElementById('questionText');
-    questionText.innerHTML = "No Violation."; // Display "No penalty" in the questionContainer
-    showResultButtons(); // Show the new buttons
-}
-
-function resetQuiz() {
-    currentStep14 = 1; // Reset to the first question
-    
-    // Hide the "Back to Home" and "Reset" buttons
-    document.getElementById('backHomeButton').classList.add('d-none');
-    document.getElementById('resetButton').classList.add('d-none');
-
-    // Show the Yes/No buttons again
-    document.getElementById('yesButton').classList.remove('d-none');
-    document.getElementById('noButton').classList.remove('d-none');
-    askNextQuestion14();
+        }
+    };
 }

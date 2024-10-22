@@ -1,198 +1,123 @@
-let currentStep32 = 1; // To keep track of the question step for Section 32
-
 function startSection32Questions() {
-    currentStep32 = 1;
-    askNextQuestion32(); // Start the process by asking the first question
-}
+    document.getElementById('questionText').innerHTML = "Q1: Does the individual have firearms?";
+    document.getElementById('questionContainer').style.display = 'block';
+    document.querySelectorAll('.scenario-section').forEach(section => section.style.display = 'none');
+    let step = 1;
 
-function askNextQuestion32() {
-    switch (currentStep32) {
-        case 1:
-            showQuestion("Does the individual have firearms?");
-            break;
-        case 2:
-            showQuestion("Does the firearm have a license registration?");
-            break;
-        case 3:
-            showQuestion("Did the individual register their firearms during the election period?");
-            break;
-        case 4:
-            showQuestion("Does the individual have written authorization from the COMELEC?");
-            break;
-        case 5:
-            showQuestion("Did the individual bring a firearm or any deadly weapon into public places?");
-            break;
-        case 6:
-            showQuestion("Is the individual a member of the Philippine National Police, Armed Forces of the Philippines, or any other law enforcement agency of the Government?");
-            break;
-        case 7:
-            showQuestion("Is the law enforcement officer off duty during the election period?");
-            break;
-        case 8:
-            showQuestion("Did the law enforcement officer bring a firearm during their off duty in public places?");
-            break;
-        case 9:
-            showQuestion("Is the law enforcement officer in full uniform, showing clearly and legibly their name, rank, and serial number?");
-            break;
-        case 10:
-            showQuestion("Did the law enforcement officer obtain written authorization from the COMELEC?");
-            break;
-        case 11:
-            showQuestion("Does the private individual use their private vehicle to transport firearms during the election period?");
-            break;
-        case 12:
-            showQuestion("Did the private individual obtain written authorization from the COMELEC to transport firearms?");
-            break;
-        case 13:
-            showQuestion("Did the private individual bring a firearm into public places during the election period?");
-            break;
-        case 14:
-            showQuestion("Did the private individual obtain written authorization from the COMELEC to bring firearms into public places during the election period?");
-            break;
-        default:
-            goBack(); // Handle end of questions or reset
-            break;
-    }
-}
-
-function handleAnswer32(answer) {
-    switch (currentStep32) {
-        case 1:
+    window.handleAnswer = function(answer) {
+        if (step === 1) {
             if (answer === 'yes') {
-                currentStep32 = 2;
-                askNextQuestion32();
+                document.getElementById('questionText').innerHTML = "Q2: Is the firearm licensed/registered?";
+                step = 2;
             } else {
-                displayMessage("END");
+                document.getElementById('questionText').innerHTML = "END: No violation.";
+                showResultButtons();
             }
-            break;
-        case 2:
+        } else if (step === 2) {
             if (answer === 'yes') {
-                currentStep32 = 5; // Skip to question 5
-                askNextQuestion32();
+                document.getElementById('questionText').innerHTML = "Q5: Has the individual brought a firearm or any deadly weapons in public places?";
+                step = 5;
             } else {
-                currentStep32 = 3;
-                askNextQuestion32();
+                document.getElementById('questionText').innerHTML = "Q3: Has the individual registered their firearm during the election period?";
+                step = 3;
             }
-            break;
-        case 3:
+        } else if (step === 3) {
             if (answer === 'yes') {
-                currentStep32 = 4;
-                askNextQuestion32();
+                document.getElementById('questionText').innerHTML = "Q4: Does the individual have a written authorization from the COMELEC?";
+                step = 4;
             } else {
-                displayPenalty();
+                document.getElementById('questionText').innerHTML = "Penalty: Imprisonment (1 to 6 years), Disqualification from Public Office, Loss of Voting Rights.";
+                showResultButtons();
             }
-            break;
-        case 4:
+        } else if (step === 4) {
             if (answer === 'yes') {
-                displayNoPenalty();
+                document.getElementById('questionText').innerHTML = "No violation.";
+                showResultButtons();
             } else {
-                displayPenalty();
+                document.getElementById('questionText').innerHTML = "Penalty: Imprisonment (1 to 6 years), Disqualification from Public Office, Loss of Voting Rights.";
+                showResultButtons();
             }
-            break;
-        case 5:
+        } else if (step === 5) {
             if (answer === 'yes') {
-                currentStep32 = 6;
-                askNextQuestion32();
+                document.getElementById('questionText').innerHTML = "Q6: Is the individual a member of the Philippine National Police, Armed Forces of the Philippines, or any other law enforcement agencies of the Government?";
+                step = 6;
             } else {
-                displayNoPenalty();
+                document.getElementById('questionText').innerHTML = "No violation.";
+                showResultButtons();
             }
-            break;
-        case 6:
+        } else if (step === 6) {
             if (answer === 'yes') {
-                currentStep32 = 7;
-                askNextQuestion32();
+                document.getElementById('questionText').innerHTML = "Q7: Is the law enforcement officer off-duty during the election period?";
+                step = 7;
             } else {
-                currentStep32 = 11; // Skip to question 11
-                askNextQuestion32();
+                document.getElementById('questionText').innerHTML = "Q9: Is the law enforcement officer in full uniform, showing clearly and legibly his/her name, rank, and serial number?";
+                step = 9;
             }
-            break;
-        case 7:
+        } else if (step === 7) {
             if (answer === 'yes') {
-                currentStep32 = 8;
-                askNextQuestion32();
+                document.getElementById('questionText').innerHTML = "Q8: Has the law enforcement officer brought a firearm during their off-duty hours in public places?";
+                step = 8;
             } else {
-                currentStep32 = 9;
-                askNextQuestion32();
+                document.getElementById('questionText').innerHTML = "No violation.";
+                showResultButtons();
             }
-            break;
-        case 8:
+        } else if (step === 8) {
             if (answer === 'yes') {
-                displayPenalty();
+                document.getElementById('questionText').innerHTML = "Penalty: Imprisonment (1 to 6 years), Disqualification from Public Office, Loss of Voting Rights.";
+                showResultButtons();
             } else {
-                displayNoPenalty();
+                document.getElementById('questionText').innerHTML = "No violation.";
+                showResultButtons();
             }
-            break;
-        case 9:
+        } else if (step === 9) {
             if (answer === 'yes') {
-                currentStep32 = 10;
-                askNextQuestion32();
+                document.getElementById('questionText').innerHTML = "Q10: Did the law enforcement officer obtain written authorization from the COMELEC?";
+                step = 10;
             } else {
-                displayPenalty();
+                document.getElementById('questionText').innerHTML = "Penalty: Imprisonment (1 to 6 years), Disqualification from Public Office, Loss of Voting Rights.";
+                showResultButtons();
             }
-            break;
-        case 10:
+        } else if (step === 10) {
             if (answer === 'yes') {
-                displayNoPenalty();
+                document.getElementById('questionText').innerHTML = "No violation.";
+                showResultButtons();
             } else {
-                displayPenalty();
+                document.getElementById('questionText').innerHTML = "Penalty: Imprisonment (1 to 6 years), Disqualification from Public Office, Loss of Voting Rights.";
+                showResultButtons();
             }
-            break;
-        case 11:
+        } else if (step === 11) {
             if (answer === 'yes') {
-                currentStep32 = 12;
-                askNextQuestion32();
+                document.getElementById('questionText').innerHTML = "Q12: Did the private individual obtain a written authorization from the COMELEC to transport firearms?";
+                step = 12;
             } else {
-                currentStep32 = 13; // Skip to question 13
-                askNextQuestion32();
+                document.getElementById('questionText').innerHTML = "Q13: Did the private individual bring a firearm in public places during the election period?";
+                step = 13;
             }
-            break;
-        case 12:
+        } else if (step === 12) {
             if (answer === 'yes') {
-                displayNoPenalty();
+                document.getElementById('questionText').innerHTML = "No violation.";
+                showResultButtons();
             } else {
-                displayPenalty();
+                document.getElementById('questionText').innerHTML = "Penalty: Imprisonment (1 to 6 years), Disqualification from Public Office, Loss of Voting Rights.";
+                showResultButtons();
             }
-            break;
-        case 13:
+        } else if (step === 13) {
             if (answer === 'yes') {
-                currentStep32 = 14;
-                askNextQuestion32();
+                document.getElementById('questionText').innerHTML = "Q14: Did the private individual obtain a written authorization from the COMELEC to bring firearms in public places during the election period?";
+                step = 14;
             } else {
-                displayNoPenalty();
+                document.getElementById('questionText').innerHTML = "No violation.";
+                showResultButtons();
             }
-            break;
-        case 14:
+        } else if (step === 14) {
             if (answer === 'yes') {
-                displayNoPenalty();
+                document.getElementById('questionText').innerHTML = "No violation.";
+                showResultButtons();
             } else {
-                displayPenalty();
+                document.getElementById('questionText').innerHTML = "Penalty: Imprisonment (1 to 6 years), Disqualification from Public Office, Loss of Voting Rights.";
+                showResultButtons();
             }
-            break;
-        default:
-            goBack();
-            return;
-    }
-}
-
-function displayPenalty() {
-    const penaltyText = "Imprisonment: One to six years. Disqualification from holding public office. Loss of the right to vote.";
-    const questionText = document.getElementById('questionText');
-    questionText.innerHTML = `Penalty: ${penaltyText}`; // Display the penalty in the questionContainer
-    showResultButtons();
-}
-
-function displayNoPenalty() {
-    const questionText = document.getElementById('questionText');
-    questionText.innerHTML = "No Violation."; // Display "No penalty" in the questionContainer
-    showResultButtons();
-}
-
-function resetQuiz32() {
-    currentStep32 = 1; // Reset to the first question of Section 32
-    document.getElementById('backHomeButton').style.display = 'none';
-    document.getElementById('resetButton').style.display = 'none';
-    document.getElementById('yesButton').style.display = 'inline-block';
-    document.getElementById('noButton').style.display = 'inline-block';
-    askNextQuestion32();
+        }
+    };
 }
 
