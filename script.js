@@ -38,7 +38,7 @@ function goBackToHome() {
     document.getElementById('yesButton').classList.remove('d-none');
     document.getElementById('noButton').classList.remove('d-none');
     
-    // Show the scenario section again
+    // Show the scenario sections again
     const scenarios = document.getElementsByClassName('scenario-section');
     for (let i = 0; i < scenarios.length; i++) {
         scenarios[i].style.display = 'block';
@@ -46,5 +46,4 @@ function goBackToHome() {
     
     // Reset the question text and step
     document.getElementById('questionText').innerHTML = '';
-    currentStep = 1; // Reset to the first question
 }

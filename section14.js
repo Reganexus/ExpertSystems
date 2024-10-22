@@ -117,7 +117,6 @@ function displayPenalty(penaltyText) {
     showResultButtons(); // Show the new buttons
 }
 
-
 function displayNoPenalty() {
     const questionText = document.getElementById('questionText');
     questionText.innerHTML = "No Violation."; // Display "No penalty" in the questionContainer
@@ -125,7 +124,7 @@ function displayNoPenalty() {
 }
 
 function resetQuiz() {
-    currentStep = 1; // Reset to the first question
+    currentStep14 = 1; // Reset to the first question
     
     // Hide the "Back to Home" and "Reset" buttons
     document.getElementById('backHomeButton').classList.add('d-none');
