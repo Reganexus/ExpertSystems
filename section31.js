@@ -1,5 +1,5 @@
 function startSection31Questions() {
-    document.getElementById('questionText').innerHTML = "Q1: Is the individual a member of Board of Election Inspectors (BEI)?";
+    document.getElementById('questionText').innerHTML = "Is the individual a member of Board of Election Inspectors (BEI)?";
     document.getElementById('questionContainer').style.display = 'block';
     document.querySelectorAll('.scenario-section').forEach(section => section.style.display = 'none');
     let step = 1;
@@ -7,34 +7,34 @@ function startSection31Questions() {
     window.handleAnswer = function(answer) {
         if (step === 1) {
             if (answer === 'yes') {
-                document.getElementById('questionText').innerHTML = "Q2: Is the member of BEI participated in the election process specifically in registration and revision activities?";
+                document.getElementById('questionText').innerHTML = "Is the member of BEI participated in the election process specifically in registration and revision activities?";
                 step = 2;
             } else {
-                document.getElementById('questionText').innerHTML = "Q3: Is the individual responsible to process the payments (cashier or finance officer) from Department of Education, Culture and Sports, or Commission on Elections?";
+                document.getElementById('questionText').innerHTML = "Is the individual responsible to process the payments (cashier or finance officer) from Department of Education, Culture and Sports, or Commission on Elections?";
                 step = 3;
             }
         } else if (step === 2) {
             if (answer === 'yes') {
-                document.getElementById('questionText').innerHTML = "Q4: Has the member of BEI received Per Diem within fifteen (15) days after the day of (Registration, Revision, and Election)?";
+                document.getElementById('questionText').innerHTML = "Has the member of BEI received Per Diem within fifteen (15) days after the day of (Registration, Revision, and Election)?";
                 step = 4;
             } else {
-                document.getElementById('questionText').innerHTML = "Ginagawa mo d2? Trip mo lang?";
+                document.getElementById('questionText').innerHTML = "No Violation.";
                 showResultButtons();
             }
         } else if (step === 3) {
             if (answer === 'yes') {
-                document.getElementById('questionText').innerHTML = "Q7: Are the funds available to pay the election inspectors?";
+                document.getElementById('questionText').innerHTML = "Are the funds available to pay the election inspectors?";
                 step = 7;
             } else {
-                document.getElementById('questionText').innerHTML = "Q10: Is the individual included in other officials (Provincial, city, municipal treasurers, and Department of Education, Culture, and Sports supervisors assigned by the Commission)?";
+                document.getElementById('questionText').innerHTML = "Is the individual included in other officials (Provincial, city, municipal treasurers, and Department of Education, Culture, and Sports supervisors assigned by the Commission)?";
                 step = 10;
             }
         } else if (step === 4) {
             if (answer === 'yes') {
-                document.getElementById('questionText').innerHTML = "Q5: Is the per diem received by the member in accordance with the specified per diem rate?";
+                document.getElementById('questionText').innerHTML = "Is the per diem received by the member in accordance with the specified per diem rate?";
                 step = 5;
             } else {
-                document.getElementById('questionText').innerHTML = "Q6: Are the funds available to pay the members of the BEI?";
+                document.getElementById('questionText').innerHTML = "Are the funds available to pay the members of the BEI?";
                 step = 6;
             }
         } else if (step === 5) {
@@ -55,10 +55,10 @@ function startSection31Questions() {
             }
         } else if (step === 7) {
             if (answer === 'yes') {
-                document.getElementById('questionText').innerHTML = "Q8: Are the Officials received the correct amount of Per Diem based on the Per Diem Rate?";
+                document.getElementById('questionText').innerHTML = "Are the Officials received the correct amount of Per Diem based on the Per Diem Rate?";
                 step = 8;
             } else {
-                document.getElementById('questionText').innerHTML = "Q9: Is the delay of payment has a valid, justifiable, and legitimate reason?";
+                document.getElementById('questionText').innerHTML = "Is the delay of payment has a valid, justifiable, and legitimate reason?";
                 step = 9;
             }
         } else if (step === 8) {
@@ -79,7 +79,7 @@ function startSection31Questions() {
             }
         } else if (step === 10) {
             if (answer === 'yes') {
-                document.getElementById('questionText').innerHTML = "Q11: Has the official received Per Diem within fifteen (15) days after the day of election?";
+                document.getElementById('questionText').innerHTML = "Has the official received Per Diem within fifteen (15) days after the day of election?";
                 step = 11;
             } else {
                 document.getElementById('questionText').innerHTML = "No violation.";
@@ -87,10 +87,10 @@ function startSection31Questions() {
             }
         } else if (step === 11) {
             if (answer === 'yes') {
-                document.getElementById('questionText').innerHTML = "Q12: Is the per diem received by the official in accordance with the specified per diem rate?";
+                document.getElementById('questionText').innerHTML = "Is the per diem received by the official in accordance with the specified per diem rate?";
                 step = 12;
             } else {
-                document.getElementById('questionText').innerHTML = "Q13: Are the funds available to pay the members of the BEI?";
+                document.getElementById('questionText').innerHTML = "Are the funds available to pay the members of the BEI?";
                 step = 13;
             }
         } else if (step === 12) {
