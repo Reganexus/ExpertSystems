@@ -1,5 +1,5 @@
 let question1_section25 =
-  "Q1: Is the individual a member of Board of Election Inspectors (Chairman, Poll Clerk, Third Member)?";
+  "Is the individual a member of Board of Election Inspectors (Chairman, Poll Clerk, Third Member)?";
 
 function startSection25Questions() {
     // Set the first question to ask if the individual is a foreigner
@@ -109,6 +109,7 @@ function startSection25Questions() {
             }
         }
     };
+
   currentSection = "section25";
   step = 1;
   document.getElementById("questionText").innerHTML = question1_section25;
@@ -121,11 +122,11 @@ function startSection25Questions() {
     if (step === 1) {
       if (answer === "yes") {
         document.getElementById("questionText").innerHTML =
-          "Q2: Is the member of BEI blocking the watchers or public from having a clear view of the ballots, election return, or tally board?";
+          "Is the member of BEI blocking the watchers or public from having a clear view of the ballots, election return, or tally board?";
         step = 2;
       } else {
         document.getElementById("questionText").innerHTML =
-          "Q3: Is the individual an Election Personnel (Watchers/Poll Workers)?";
+          "Is the individual an Election Personnel (Watchers/Poll Workers)?";
         step = 3;
       }
     } else if (step === 2) {
@@ -136,17 +137,17 @@ function startSection25Questions() {
         showResultButtons();
       } else {
         document.getElementById("questionText").innerHTML =
-          "Q4: Is the table cluttered with unrelated materials like pens, papers, or personal items?";
+          "Is the table cluttered with unrelated materials like pens, papers, or personal items?";
         step = 4;
       }
     } else if (step === 3) {
       if (answer === "yes") {
         document.getElementById("questionText").innerHTML =
-          "Q5: Is the watcher or poll worker trying to touch the tally board, ballots, or election return?";
+          "Is the watcher or poll worker trying to touch the tally board, ballots, or election return?";
         step = 5;
       } else {
         document.getElementById("questionText").innerHTML =
-          "Q6: Are you a registered voter?";
+          "Are you a registered voter?";
         step = 6;
       }
     } else if (step === 4) {
@@ -156,7 +157,7 @@ function startSection25Questions() {
         showResultButtons();
       } else {
         document.getElementById("questionText").innerHTML =
-          "Q7: Are the BEI members following procedural requirements like reading ballots aloud and recording votes in real-time?";
+          "Are the BEI members following procedural requirements like reading ballots aloud and recording votes in real-time?";
         step = 7;
       }
     } else if (step === 5) {
@@ -171,11 +172,11 @@ function startSection25Questions() {
     } else if (step === 6) {
       if (answer === "yes") {
         document.getElementById("questionText").innerHTML =
-          "Q8: Is the registered voter trying to touch the tally board, ballots, or election return?";
+          "Is the registered voter trying to touch the tally board, ballots, or election return?";
         step = 8;
       } else {
         document.getElementById("questionText").innerHTML =
-          "Q9: Is the individual an unauthorized person trying to assist in the election process?";
+          "Is the individual an unauthorized person trying to assist in the election process?";
         step = 9;
       }
     } else if (step === 7) {
@@ -185,7 +186,7 @@ function startSection25Questions() {
         showResultButtons();
       } else {
         document.getElementById("questionText").innerHTML =
-          "Q10: Are unauthorized individuals getting too close to ballots or documents?";
+          "Are unauthorized individuals getting too close to ballots or documents?";
         step = 10;
       }
     } else if (step === 8) {

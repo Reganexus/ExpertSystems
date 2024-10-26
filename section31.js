@@ -72,11 +72,11 @@ function startSection31Questions() {
     } else if (step === 7) {
       if (answer === "yes") {
         document.getElementById("questionText").innerHTML =
-          "Q8: Are the Officials received the correct amount of Per Diem based on the Per Diem Rate?";
+          "Are the Officials received the correct amount of Per Diem based on the Per Diem Rate?";
         step = 8;
       } else {
         document.getElementById("questionText").innerHTML =
-          "Q9: Is the delay of payment has a valid, justifiable, and legitimate reason?";
+          "Is the delay of payment has a valid, justifiable, and legitimate reason?";
         step = 9;
       }
     } else if (step === 8) {
@@ -100,7 +100,7 @@ function startSection31Questions() {
     } else if (step === 10) {
       if (answer === "yes") {
         document.getElementById("questionText").innerHTML =
-          "Q11: Has the official received Per Diem within fifteen (15) days after the day of election?";
+          "Has the official received Per Diem within fifteen (15) days after the day of election?";
         step = 11;
       } else {
         document.getElementById("questionText").innerHTML = "No violation.";
@@ -109,11 +109,11 @@ function startSection31Questions() {
     } else if (step === 11) {
       if (answer === "yes") {
         document.getElementById("questionText").innerHTML =
-          "Q12: Is the per diem received by the official in accordance with the specified per diem rate?";
+          "Is the per diem received by the official in accordance with the specified per diem rate?";
         step = 12;
       } else {
         document.getElementById("questionText").innerHTML =
-          "Q13: Are the funds available to pay the members of the BEI?";
+          "Are the funds available to pay the members of the BEI?";
         step = 13;
       }
     } else if (step === 12) {
