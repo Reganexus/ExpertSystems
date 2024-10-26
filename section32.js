@@ -1,4 +1,4 @@
-let question1_section32 = "Q1: Does the individual have firearms?";
+let question1_section32 = "Does the individual have firearms?";
 
 function startSection32Questions() {
   currentSection = "section32";

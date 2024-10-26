@@ -1,5 +1,5 @@
 let question1_section33 =
-  "Q1: Is the individual a candidate for public office, including incumbent public officers seeking election to any public office?";
+  "Is the individual a candidate for public office, including incumbent public officers seeking election to any public office?";
 
 function startSection33Questions() {
   currentSection = "section33";
