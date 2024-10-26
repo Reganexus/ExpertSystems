@@ -45,10 +45,10 @@ function resetSection() {
     .querySelectorAll('input[name="answer"]')
     .forEach((input) => (input.checked = false));
 
-  // Hide any scenario sections that might be displayed after answering
-  document
-    .querySelectorAll(".scenario-section")
-    .forEach((section) => (section.style.display = "none"));
+  // // Hide any scenario sections that might be displayed after answering
+  // document
+  //   .querySelectorAll(".scenario-section")
+  //   .forEach((section) => (section.style.display = "none"));
 }
 
 function handleAnswer(answer) {
