@@ -46,9 +46,9 @@ function resetSection() {
     .forEach((input) => (input.checked = false));
 
   // // Hide any scenario sections that might be displayed after answering
-  // document
-  //   .querySelectorAll(".scenario-section")
-  //   .forEach((section) => (section.style.display = "none"));
+  document
+    .querySelectorAll(".scenario-section")
+    .forEach((section) => (section.style.display = "none"));
 }
 
 function handleAnswer(answer) {
