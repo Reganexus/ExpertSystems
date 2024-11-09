@@ -58,7 +58,7 @@ function startSection5Questions() {
     } else if (step === 5) {
       if (answer === "yes") {
         document.getElementById("questionText").innerHTML =
-          "Did the candidate commenced the electoral campaign more than 90 days before the election excluding Maundy Thursday and Good Friday?";
+          "Did the candidate commenced the electoral campaign more than 45 days before the election excluding Maundy Thursday and Good Friday?";
         step = 2;
       } else {
         document.getElementById("questionText").innerHTML = "No penalty.";
