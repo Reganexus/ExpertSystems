@@ -1,21 +1,18 @@
-let question1_section5 =
-  "Is the candidate running for president, vice president, or senator?";
+let question1_section5 = "Is the candidate running for president, vice president, or senator?";
 
 function startSection5Questions() {
   currentSection = "section5";
-  step = 1;
-  falseCounter = 0;
+  step = 1;  // Ensure step starts at 1
+  falseCounter = 0;  // Ensure false counter starts at 0
   document.getElementById("questionText").innerHTML = question1_section5;
   document.getElementById("questionContainer").style.display = "block";
-  document
-    .querySelectorAll(".scenario-section")
-    .forEach((section) => (section.style.display = "none"));
+  document.querySelectorAll(".scenario-section").forEach((section) => section.style.display = "none");
 
   window.handleAnswer = function (answer) {
     if (step === 1) {
       if (answer === "yes") {
         document.getElementById("questionText").innerHTML =
-          "Did the candidate commenced the electoral campaign more than 90 days before the election excluding Maundy Thursday and Good Friday?";
+          "Did the candidate commence the electoral campaign more than 90 days before the election excluding Maundy Thursday and Good Friday?";
         step = 2;
       } else {
         document.getElementById("questionText").innerHTML =
@@ -58,7 +55,7 @@ function startSection5Questions() {
     } else if (step === 5) {
       if (answer === "yes") {
         document.getElementById("questionText").innerHTML =
-          "Did the candidate commenced the electoral campaign more than 45 days before the election excluding Maundy Thursday and Good Friday?";
+          "Did the candidate commence the electoral campaign more than 45 days before the election excluding Maundy Thursday and Good Friday?";
         step = 2;
       } else {
         document.getElementById("questionText").innerHTML = "No penalty.";

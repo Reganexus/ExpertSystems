@@ -1,8 +1,12 @@
 let currentSection = "";
 
 function resetSection() {
-  step = 1;
-  falseCounter = 0;
+  // Resetting to the initial state
+  step = 1;  // Reset the step
+  falseCounter = 0;  // Reset false counter
+  counterMax = 0;
+
+  // Reset the question text and step based on the current section
   if (currentSection === "section5") {
     document.getElementById("questionText").innerHTML = question1_section5;
   } else if (currentSection === "section6") {
@@ -27,7 +31,7 @@ function resetSection() {
     document.getElementById("questionText").innerHTML = "Section not available";
   }
 
-  // Show the Yes/No buttons
+  // Resetting the UI elements
   document.getElementById("yesButton").classList.remove("d-none");
   document.getElementById("noButton").classList.remove("d-none");
 
@@ -40,11 +44,15 @@ function resetSection() {
   // Show the question container again
   document.getElementById("questionContainer").style.display = "block";
 
-  // Optionally clear any previously selected answers if using inputs
-  document
-    .querySelectorAll('input[name="answer"]')
-    .forEach((input) => (input.checked = false));
+  // Optionally clear any previously selected answers
+  document.querySelectorAll('input[name="answer"]').forEach((input) => (input.checked = false));
+  
+  // Reset all scenario sections visibility
+  document.querySelectorAll(".scenario-section").forEach((section) => {
+    section.style.display = "none";  // Hide all scenario sections
+  });
 }
+
 
 function handleAnswer(answer) {
   // Hide the question container after the answer is selected
