@@ -31,7 +31,7 @@ function startSection25Questions() {
         showResultButtons(); // End flow if foreigner involved
       } else {
         // No violation if foreigner is not involved
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons(); // End flow if foreigner not involved
       }
     } else if (step === 1) { // Election official question
@@ -80,7 +80,7 @@ function startSection25Questions() {
           "Penalty: Guilty of violating Section 23 and 24 of the Omnibus Election Code.<br>Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
         showResultButtons();
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     } else if (step === 6) { // Logic for registered voter
@@ -109,7 +109,7 @@ function startSection25Questions() {
           "Penalty: Guilty of violating Section 23 and 24 of the Omnibus Election Code.<br>Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
         showResultButtons();
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     } else if (step === 9) { // Logic for unauthorized person
@@ -118,7 +118,7 @@ function startSection25Questions() {
           "Penalty: Guilty of violating Section 23 and 24 of the Omnibus Election Code.<br>Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
         showResultButtons();
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     } else if (step === 10) { // Logic for unauthorized individuals too close
@@ -127,7 +127,7 @@ function startSection25Questions() {
           "Penalty: Guilty of violating Section 23 and 24 of the Omnibus Election Code.<br>Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
         showResultButtons();
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     }
@@ -201,7 +201,7 @@ startSection25Questions();
           "Penalty: Guilty of violating the rules of vote counting. Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
         showResultButtons();
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     } else if (step === 6) {
@@ -230,7 +230,7 @@ startSection25Questions();
           "Penalty: Guilty of violating the rules of vote counting. Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
         showResultButtons();
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     } else if (step === 9) {
@@ -239,7 +239,7 @@ startSection25Questions();
           "Penalty: Guilty of violating the rules of vote counting. Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
         showResultButtons();
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     } else if (step === 10) {
@@ -248,7 +248,7 @@ startSection25Questions();
           "Penalty: Guilty of violating the rules of vote counting. Imprisonment: 1 to 6 years, Disqualification from Public Office, Loss of Voting Rights.";
         showResultButtons();
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     }

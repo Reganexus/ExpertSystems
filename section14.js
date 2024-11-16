@@ -13,7 +13,7 @@ function startSection14Questions() {
                 document.getElementById('questionText').innerHTML = "Is the individual running for a position in the barangay?";
                 step = 2;
             } else {
-                document.getElementById('questionText').innerHTML = "No penalty.";
+                document.getElementById('questionText').innerHTML = "No Penalty";
                 showResultButtons();
             }
         } else if (step === 2) {
@@ -21,7 +21,7 @@ function startSection14Questions() {
                 document.getElementById('questionText').innerHTML = "Has the candidate spent any money or resources for the election campaign?";
                 step = 3;
             } else {
-                document.getElementById('questionText').innerHTML = "No penalty.";
+                document.getElementById('questionText').innerHTML = "No Penalty";
                 showResultButtons();
             }
         } else if (step === 3) {
@@ -42,7 +42,7 @@ function startSection14Questions() {
             }
         } else if (step === 5) {
             if (answer === 'yes') {
-                document.getElementById('questionText').innerHTML = "No penalty.";
+                document.getElementById('questionText').innerHTML = "No Penalty";
                 showResultButtons();
             } else {
                 document.getElementById('questionText').innerHTML = "Has the candidate previously violated the regulations regarding the submission of the SOCE?";
@@ -50,7 +50,7 @@ function startSection14Questions() {
             }
         } else if (step === 6) {
             if (answer === 'yes') {
-                document.getElementById('questionText').innerHTML = "No penalty.";
+                document.getElementById('questionText').innerHTML = "No Penalty";
                 showResultButtons();
             } else {
                 document.getElementById('questionText').innerHTML = "Penalty: An administrative offense, fine between P1,000 and P30,000.";

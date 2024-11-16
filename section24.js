@@ -8,7 +8,7 @@ function startSection24Questions() {
   // Define penalty messages to avoid redundancy
   const penaltyBase = "Penalty: 1-6 years imprisonment is not subject to probation\nPenalty: Sentenced to suffer disqualification to hold public office and deprivation of the right of suffrage.\nPenalty: Sentenced to pay a fine not less than ten thousand pesos (10,000) if found guilty.";
   const penaltyWithDeportation = penaltyBase + "\nPenalty: Sentenced to deportation which shall be enforced after the prison term has been served.";
-  const noPenalty = "No penalty.";
+  const noPenalty = "No Penalty";
 
   document.getElementById("questionText").innerHTML = question1_section24;
   document.getElementById("questionContainer").style.display = "block";

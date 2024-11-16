@@ -22,7 +22,7 @@ function startSection33Questions() {
       if (answer === "yes") {
         displayPenalty("foreign involvement");
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty.";
         showResultButtons();
       }
     } else if (step === 3) {
@@ -61,12 +61,12 @@ function startSection33Questions() {
           "Does the candidate submit an application to the COMELEC to assign them a member/members of a law enforcement agency?";
         step = 7;
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty.";
         showResultButtons();
       }
     } else if (step === 7) {
       if (answer === "yes") {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty.";
         showResultButtons();
       } else {
         displayPenalty("unauthorized security");
@@ -77,7 +77,7 @@ function startSection33Questions() {
           "Are the law enforcer(s) Security Personnel and Bodyguards of a candidate?";
         step = 11;
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty.";
         showResultButtons();
       }
     } else if (step === 11) {
@@ -86,7 +86,7 @@ function startSection33Questions() {
           "Are the law enforcer(s) assigned by the COMELEC as Security Personnel and Bodyguards for the individual candidate?";
         step = 12;
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty.";
         showResultButtons();
       }
     } else if (step === 12) {
@@ -99,7 +99,7 @@ function startSection33Questions() {
       }
     } else if (step === 13) {
       if (answer === "yes") {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty.";
         showResultButtons();
       } else {
         displayPenalty("law enforcement misuse");

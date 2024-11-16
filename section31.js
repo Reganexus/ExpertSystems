@@ -31,7 +31,7 @@ function startSection31Questions() {
         showResultButtons(); // End flow if foreigner involved
       } else {
         // No violation if foreigner is not involved
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons(); // End flow if foreigner not involved
       }
     } else if (step === 3) {
@@ -77,7 +77,7 @@ function startSection31Questions() {
       }
     } else if (step === 7) {
       if (answer === "yes") {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       } else {
         document.getElementById("questionText").innerHTML =
@@ -90,7 +90,7 @@ function startSection31Questions() {
           "Penalty: Guilty of violating Sections 23 and 24 of the Omnibus Election Code for unjustifiable delays in payment of per diems when funds are available. Consequences include imprisonment for a term of 1 to 6 years, disqualification from holding public office, and the loss of voting rights.";
         showResultButtons();
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     } else if (step === 9) {
@@ -105,7 +105,7 @@ function startSection31Questions() {
       }
     } else if (step === 10) {
       if (answer === "yes") {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       } else {
         document.getElementById("questionText").innerHTML =
@@ -114,7 +114,7 @@ function startSection31Questions() {
       }
     } else if (step === 11) {
       if (answer === "yes") {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       } else {
         document.getElementById("questionText").innerHTML =
@@ -127,7 +127,7 @@ function startSection31Questions() {
           "Has the official received Per Diem within fifteen (15) days after the day of election?";
         step = 13;
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     } else if (step === 13) {
@@ -142,7 +142,7 @@ function startSection31Questions() {
       }
     } else if (step === 14) {
       if (answer === "yes") {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       } else {
         document.getElementById("questionText").innerHTML =
@@ -155,7 +155,7 @@ function startSection31Questions() {
           "Penalty: Guilty of violating Sections 23 and 24 of the Omnibus Election Code for unjustifiable delays in payment of per diems when funds are available. Consequences include imprisonment for a term of 1 to 6 years, disqualification from holding public office, and the loss of voting rights.";
         showResultButtons();
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     }

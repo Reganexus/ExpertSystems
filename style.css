@@ -83,6 +83,11 @@ section {
   .modal-content {
     border-radius: 1rem !important;
     background-color: white;
+    min-height: 20rem !important;
+    min-width: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

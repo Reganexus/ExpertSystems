@@ -49,7 +49,7 @@ function startSection5Questions() {
       }
 
       if (falseCounter >= 2) {
-        document.getElementById("questionText").innerHTML = "No penalty.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     } else if (step === 5) {
@@ -58,7 +58,7 @@ function startSection5Questions() {
           "Did the candidate commence the electoral campaign more than 45 days before the election excluding Maundy Thursday and Good Friday?";
         step = 2;
       } else {
-        document.getElementById("questionText").innerHTML = "No penalty.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     }

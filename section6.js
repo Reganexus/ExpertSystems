@@ -51,7 +51,7 @@ function startSection6Questions() {
 
       // If any false answers were given, show "No penalty"
       if (falseCounter > 0) {
-        document.getElementById("questionText").innerHTML = "No penalty.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
       }
 
       showResultButtons();
@@ -63,7 +63,7 @@ function startSection6Questions() {
           "Did the candidate hold political conventions or meetings for the nomination or selection of the official candidates of their political party, organization, groups, or coalition more than 75 days before the election?";
         step = 2;
       } else {
-        document.getElementById("questionText").innerHTML = "No penalty.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     }

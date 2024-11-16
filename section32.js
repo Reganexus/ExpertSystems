@@ -26,7 +26,7 @@ function startSection32Questions() {
           "Penalty: Guilty of violating Section 24 of the Omnibus Election Code.<br>Imprisonment: One to six years, sentenced to deportation which shall be enforced after the prison term has been served.";
         showResultButtons();
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     } else if (step === 3) {
@@ -35,7 +35,7 @@ function startSection32Questions() {
         document.getElementById("questionText").innerHTML = "Is the firearm licensed/registered?";
         step = 4;
       } else {
-        document.getElementById("questionText").innerHTML = "END: No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     } else if (step === 4) {
@@ -53,7 +53,7 @@ function startSection32Questions() {
         document.getElementById("questionText").innerHTML = "Is the individual a member of the Philippine National Police, Armed Forces of the Philippines, or any other law enforcement agencies of the Government?";
         step = 7;
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     } else if (step === 6) {
@@ -92,13 +92,13 @@ function startSection32Questions() {
           "Penalty: Imprisonment: One to six years due to bringing a firearm while off-duty, loss of current position or future roles in public service, loss of right to vote.";
         showResultButtons();
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     } else if (step === 10) {
       // Q10: COMELEC authorization
       if (answer === "yes") {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       } else {
         document.getElementById("questionText").innerHTML = 
@@ -127,7 +127,7 @@ function startSection32Questions() {
     } else if (step === 13) {
       // Q13: COMELEC authorization for private transport
       if (answer === "yes") {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       } else {
         document.getElementById("questionText").innerHTML = 
@@ -140,13 +140,13 @@ function startSection32Questions() {
         document.getElementById("questionText").innerHTML = "Did the private individual obtain a written authorization from the COMELEC to bring firearms in public places during the election period?";
         step = 15;
       } else {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       }
     } else if (step === 15) {
       // Q15: COMELEC authorization for public firearm carrying
       if (answer === "yes") {
-        document.getElementById("questionText").innerHTML = "No violation.";
+        document.getElementById("questionText").innerHTML = "No Penalty";
         showResultButtons();
       } else {
         document.getElementById("questionText").innerHTML = 
